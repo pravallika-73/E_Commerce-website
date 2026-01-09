@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>E-Commerce Sales Insights</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>E-Commerce Sales Insights</h1>
+
+  <section id="filters">
+    <label>Start Date: <input type="date" id="startDate"></label>
+    <label>End Date: <input type="date" id="endDate"></label>
+    <button id="applyFilters">Apply</button>
+  </section>
+
+  <section id="kpi-cards">
+    <div class="kpi-card">
+      <h3>Total Sales</h3>
+      <p id="kpiTotalSales">0</p>
+    </div>
+    <div class="kpi-card">
+      <h3>Number of Orders</h3>
+      <p id="kpiNumOrders">0</p>
+    </div>
+    <div class="kpi-card">
+      <h3>Average Order Value</h3>
+      <p id="kpiAOV">0</p>
+    </div>
+  </section>
+
+  <section id="charts">
+    <canvas id="salesOverTimeChart"></canvas>
+    <canvas id="salesByCategoryChart"></canvas>
+  </section>
+
+  <section id="reports">
+  <h2>Download Report</h2>
+  <button id="downloadCsvBtn">Download CSV</button>
+</section>
+
+
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
